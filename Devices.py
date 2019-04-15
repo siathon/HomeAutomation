@@ -12,7 +12,6 @@ class Lamp():
 
     def turnON(self):
         print('Turning lamp ON...', end='')
-        self.__status = True
         self.spi.xfer([0x55])
         sleep(1)
         st = self.getState()
@@ -25,7 +24,6 @@ class Lamp():
 
     def turnOFF(self):
         print('Turning lamp OFF...', end='')
-        self.__status = False
         self.spi.xfer([0xAA])
         sleep(1)
         st = self.getState()
